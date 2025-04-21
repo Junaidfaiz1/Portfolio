@@ -1,4 +1,4 @@
-"use client";
+
 import HeroSection from "@/components/HeroSection";
 import Skills from "@/app/about/components/Skills";
 import AboutMe from "@/app/about/components/AboutMe";
@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 const Homepage = () => {
   return (
     <>
-   <HeroSection/>
-   <AboutMe/>
+    <HeroSection/>
+    <AboutMe/>
     <Skills/>
     <Projects/>
     <ContactUs/>

@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Transition from "@/components/Transition.jsx";
+import Transition from "@/components/Transition";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

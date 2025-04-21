@@ -1,10 +1,10 @@
 "use client"
-import HeroSection from "@/components/HeroSection"
+import HeroSection from "@/Components/HeroSection"
 import Skills from "@/app/about/components/Skills";
 import AboutMe from "@/app/about/components/AboutMe";
 import Projects from "@/app/projects/components/Projects";
 import ContactUs from "@/app/contact/components/contact-us";
-import Footer from "@/components/Footer";
+import Footer from "@/Components/Footer";
 const page = () => {
   return (
     <>

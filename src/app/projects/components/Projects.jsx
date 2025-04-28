@@ -14,7 +14,14 @@ const projectsData = [
     image: "/smartlib.png",
     demoLink: "https://smartlib.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/LibraryManagement",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Shadcn UI"],
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Shadcn UI",
+    ],
   },
   {
     id: 2,
@@ -32,9 +39,16 @@ const projectsData = [
     description:
       "A Multi-User Blogging Platform I developed Blog Insite, a scalable and intuitive multi-user blogging platform where users can write and share articles across diverse topics, including Finance, Technology, and Lifestyle.",
     image: "/blogger.png",
-    
+    demoLink: "https://blogger-insite.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/blogger",
-    tags: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Neomorphic Design"],
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Neomorphic Design",
+    ],
   },
   {
     id: 4,
@@ -52,8 +66,9 @@ const projectsData = [
     description:
       "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
     image: "/Fyp.jpg",
-    
-    githubLink: "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
+
+    githubLink:
+      "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
     tags: ["React", "ETh Blockchhain", "Boostrap", "Solidity"],
   },
 ];

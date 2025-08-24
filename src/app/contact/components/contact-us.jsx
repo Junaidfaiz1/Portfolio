@@ -91,7 +91,7 @@ const ContactUs = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="p-10">
+        <div className="px-6 py-10">
           <form className="space-y-6" onSubmit={HandleSubmit}>
             <div>
               <label className="block mb-1 font-medium">Name</label>

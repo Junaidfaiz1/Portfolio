@@ -10,7 +10,7 @@ const HeroSection = () => {
       <section className="w-full lg:w-1/2 h-[400px] lg:h-full relative flex items-center justify-center">
         <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-lg border-4 border-blue-600">
           <Image
-            src="/junaidfaiz.jpg" 
+            src="/junaidfaiz.jpg"
             alt="Junaid Faiz - MERN Stack Developer"
             className="object-cover"
             fill
@@ -43,15 +43,21 @@ const HeroSection = () => {
             aria-label="View Projects"
           >
             <Link href="projects">View Projects</Link>
-            
           </button>
           <button
             className="text-blue-600 border border-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition-all"
             aria-label="Download Resume"
           >
-            <a download={true} href="/Junaid Faiz Mern Stack Developer.pdf" target="_blank" rel="noopener noreferrer"> Download Resume</a>
-              {/* <span className="font-semibold">Download Resume</span> */}
-         
+            <a
+              download={true}
+              href="/Junaid Faiz Resume(full stack).pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              Download Resume
+            </a>
+            {/* <span className="font-semibold">Download Resume</span> */}
           </button>
         </div>
       </section>

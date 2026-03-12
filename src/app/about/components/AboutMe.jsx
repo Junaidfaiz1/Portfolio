@@ -3,39 +3,49 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col items-center md:mt-0 mt-24  p-4">
-      <h1 className="text-4xl font-bold mb-4 mt-6 text-center">About Me</h1>
-      <p className="text-lg text-gray-700 max-w-2xl text-start md:w-screen md:text-start">
-        I am a passionate and dedicated MERN stack developer with a knack for
-        building dynamic, responsive, and scalable web applications. Leveraging
-        modern technologies like MongoDB, Express.js, React, and Node.js, I
-        craft full-stack solutions that are not only seamless but also
-        user-focused.
-        <br />
-        <br />
-        Currently, I specialize in working with Next.js, a powerful framework
-        that enhances React&apos;s capabilities, enabling me to deliver fast,
-        SEO-friendly, and feature-rich web applications. From solving complex
-        problems to continuously exploring emerging technologies, I thrive on
-        staying at the forefront of the ever-evolving web development landscape.
-        <br />
-        <br />
-        With a strong foundation in both front-end and back-end development, I
-        am driven to create impactful digital experiences. I invite you to
-        explore my portfolio and see how my skills and passion come to life in
-        the projects I&apos;ve built. Let&apos;s build something amazing
-        together!
-      </p>
-      <div className="flex mt-6 justify-end md:justify-self-end w-full md:w-2/3">
-        <Image
-          src="/signature.svg"
-          width={90}
-          height={90}
-          alt="Signature"
-          className="mt-4 "
-        />
+    <section className="flex items-center justify-center min-h-[60vh] bg-gradient-to-br from-blue-50 via-purple-100 to-pink-50 px-4 py-16 animate-fadeIn">
+      <div className="max-w-2xl w-full bg-white/80 dark:bg-gray-900/80 rounded-3xl shadow-2xl p-10 flex flex-col items-center gap-8">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 drop-shadow-lg text-center mb-2">
+          About Me
+        </h1>
+        <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-200 text-center leading-relaxed">
+          Hi, I&apos;m{" "}
+          <span className="font-bold text-blue-600">Junaid Faiz</span>—a
+          creative developer passionate about crafting digital experiences that
+          inspire and engage.
+          <br />
+          <br />
+          My journey began with the MERN stack, but I quickly expanded my
+          expertise to Next.js, NestJS, and Prisma ORM, building robust,
+          scalable, and high-performance web applications.
+          <br />
+          <br />
+          I thrive on turning ideas into reality, blending clean code with
+          modern design. Whether it&apos;s architecting APIs, optimizing
+          databases, or designing responsive interfaces, I love solving complex
+          challenges and pushing boundaries.
+          <br />
+          <br />
+          My approach is user-focused, always aiming for seamless, accessible,
+          and visually stunning solutions. I stay ahead by exploring new
+          technologies and continuously improving my skills.
+          <br />
+          <br />
+          <span className="font-semibold text-blue-600">
+            Let&apos;s connect and create something extraordinary together!
+          </span>
+        </p>
+        <div className="flex mt-6 justify-center w-full">
+          <Image
+            src="/signature.svg"
+            width={90}
+            height={90}
+            alt="Signature"
+            className="mt-4 drop-shadow-lg"
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

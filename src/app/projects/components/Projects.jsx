@@ -66,6 +66,17 @@ const projectsData = [
     description:
       "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
     image: "/Fyp.jpg",
+    demoLink: "",
+    githubLink:
+      "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
+    tags: ["React", "ETh Blockchhain", "Boostrap", "Solidity"],
+  },
+  {
+    id: 5,
+    title: "Antique Preservation System",
+    description:
+      "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
+    image: "/Fyp.jpg",
 
     githubLink:
       "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
@@ -93,7 +104,8 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Explore a selection of my projects across web development, showcasing creativity and technical expertise.
+            Explore a selection of my projects across web development,
+            showcasing creativity and technical expertise.
           </motion.p>
         </div>
 

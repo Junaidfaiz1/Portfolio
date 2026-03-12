@@ -19,28 +19,78 @@ const ContactUs = () => {
     if (!name || !email || !message) {
       alert("Please fill all fields!");
       setLoading(false);
-      return;
-    }
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formdata),
-      });
-
-      if (response.ok) {
-        setLoading(false);
-        alert("Email sent successfully!");
-        ResetForm();
-      } else {
-        alert("Error sending email!");
-      }
-    } catch (err) {
-      setLoading(false);
-      console.error("Error sending email:", err);
-      alert("Error sending email!");
+      return (
+        <section className="min-h-screen flex items-center justify-center py-16 px-4 animate-fadeIn">
+          <div className="rounded-3xl shadow-2xl overflow-hidden w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
+            {/* Left Side - Contact Info */}
+            <div className="bg-gradient-to-b from-blue-600 via-purple-500 to-pink-400 text-white p-12 flex flex-col justify-center">
+              <h2 className="text-4xl font-extrabold mb-6 drop-shadow-lg">
+                Get in Touch
+              </h2>
+              <div className="flex flex-col gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <MapPinHouse size={22} /> <span>Lahore, Pakistan</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone size={22} /> <span>+92 300 1234567</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail size={22} /> <span>junaidfaiz1@gmail.com</span>
+                </div>
+              </div>
+              <p className="text-lg">
+                Feel free to reach out for collaborations or just a friendly
+                hello!
+              </p>
+            </div>
+            {/* Right Side - Contact Form */}
+            <form
+              className="bg-white dark:bg-gray-900 p-12 flex flex-col gap-6 justify-center"
+              onSubmit={HandleSubmit}
+            >
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">
+                Contact Form
+              </h3>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-400 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                value={formdata.name}
+                onChange={(e) =>
+                  setFormData({ ...formdata, name: e.target.value })
+                }
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-400 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800"
+                value={formdata.email}
+                onChange={(e) =>
+                  setFormData({ ...formdata, email: e.target.value })
+                }
+                required
+              />
+              <textarea
+                placeholder="Your Message"
+                className="px-4 py-3 rounded-lg border border-blue-200 focus:ring-2 focus:ring-blue-400 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 min-h-[120px]"
+                value={formdata.message}
+                onChange={(e) =>
+                  setFormData({ ...formdata, message: e.target.value })
+                }
+                required
+              />
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-8 py-3 rounded-xl shadow-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 transition-all font-semibold text-lg"
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          </div>
+        </section>
+      );
     }
   };
 

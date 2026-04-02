@@ -1,32 +1,32 @@
 import React from "react";
 import { BadgeCheck } from "lucide-react";
 
+const certifications = [
+  "Full Stack Developer Bootcamp - Bitbash",
+  "Advanced Git - Datacamp",
+  "Advanced GitHub - Datacamp",
+  "Advanced React - Udemy",
+];
+
 const Certification = () => (
-  <section className="flex items-center justify-center min-h-[30vh] bg-gradient-to-br from-purple-100 via-pink-50 to-blue-50 px-4 py-16 animate-fadeIn">
-    <div className="max-w-3xl w-full bg-white/90 dark:bg-gray-900/90 rounded-3xl shadow-2xl p-10 flex flex-col items-center gap-8">
-      <div className="flex items-center gap-3 mb-2">
-        <BadgeCheck className="text-purple-600 w-8 h-8" />
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-purple-600">
+  <section className="section-shell py-8 sm:py-12">
+    <div className="panel p-6 sm:p-10">
+      <div className="mb-6 flex items-center gap-3">
+        <BadgeCheck className="h-7 w-7 text-cyan-300" />
+        <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">
           Certifications
         </h2>
       </div>
-      <ul className="text-left text-gray-700 dark:text-gray-300 space-y-4 w-full">
-        <li className="flex items-center gap-3 text-lg">
-          <BadgeCheck className="w-6 h-6 text-blue-500" />
-          Full Stack Developer BootCamp at Bitbash
-        </li>
-        <li className="flex items-center gap-3 text-lg">
-          <BadgeCheck className="w-6 h-6 text-purple-500" />
-          Advanced Git on Datacamp
-        </li>
-        <li className="flex items-center gap-3 text-lg">
-          <BadgeCheck className="w-6 h-6 text-pink-500" />
-          Advanced Github on Datacamp
-        </li>
-        <li className="flex items-center gap-3 text-lg">
-          <BadgeCheck className="w-6 h-6 text-emerald-500" />
-          Advanced React on Udemy
-        </li>
+      <ul className="grid gap-3 text-left">
+        {certifications.map((item) => (
+          <li
+            key={item}
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-900/60 p-4 text-slate-200"
+          >
+            <BadgeCheck className="h-5 w-5 text-amber-300" />
+            <span>{item}</span>
+          </li>
+        ))}
       </ul>
     </div>
   </section>

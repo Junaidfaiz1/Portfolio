@@ -1,7 +1,7 @@
 import React from "react";
 
 const CallToAction = () => (
-  <section className="flex items-center justify-center min-h-[20vh] bg-gradient-to-br from-blue-600 via-purple-500 to-pink-400 px-4 py-12 animate-fadeIn">
+  <section className="flex items-center justify-center min-h-[20vh] bg-gradient-to-br from-purple-900 via-pink-700 to-yellow-400 px-2 sm:px-4 py-6 sm:py-12 animate-fadeIn">
     <div className="max-w-xl w-full bg-white/90 dark:bg-gray-900/90 rounded-3xl shadow-2xl p-8 flex flex-col items-center gap-6">
       <h2 className="text-2xl sm:text-3xl font-extrabold text-blue-600 text-center mb-2">
         Ready to Collaborate?

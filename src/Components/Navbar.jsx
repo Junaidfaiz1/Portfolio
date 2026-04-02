@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import NavLinks from "./NavLinks";
-import { motion } from "framer-motion";
 
 const Links = [
   { url: "/", title: "Home" },
@@ -14,79 +12,58 @@ const Links = [
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
-  // Animation variants
-  const Topvariants = {
-    closed: { rotate: 0 },
-    opened: { rotate: 45, backgroundColor: "rgb(255,255,255)" },
-  };
-  const middleVariants = {
-    closed: { opacity: 1 },
-    opened: { opacity: 0 },
-  };
-  const bottomVariants = {
-    closed: { rotate: 0 },
-    opened: { rotate: -45, backgroundColor: "rgb(255,255,255)" },
-  };
-  const ListVariants = {
-    closed: { x: "100vh" },
-    opened: {
-      x: 0,
-      transition: { when: "beforeChildren", staggerChildren: 0.15 },
-    },
-  };
-  const listsItemVariants = {
-    closed: { opacity: 0, x: 50 },
-    opened: { opacity: 1, x: 0 },
-  };
+
+  React.useEffect(() => {
+    const closeMenu = () => setOpen(false);
+    window.addEventListener("resize", closeMenu);
+    return () => window.removeEventListener("resize", closeMenu);
+  }, []);
+
   return (
-    <nav className="w-full flex items-center justify-between px-4 sm:px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 dark:bg-black shadow-xl fixed top-0 left-0 right-0 z-50">
-      {/* Logo */}
-      <Link href="/" className="flex items-center gap-2">
-        <span className="text-2xl font-extrabold text-white drop-shadow-lg tracking-wide">
-          Junaid Faiz
-        </span>
-      </Link>
-      {/* Desktop NavLinks */}
-      <div className="hidden md:flex gap-8">
-        <NavLinks links={Links} />
-      </div>
-      {/* Mobile Hamburger */}
-      <div className="md:hidden flex items-center">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <nav className="section-shell flex h-20 items-center justify-between">
+        <Link href="/" className="group flex flex-col leading-tight">
+          <span className="text-lg font-semibold tracking-wide text-slate-100">
+            Junaid Faiz
+          </span>
+          <span className="text-xs uppercase tracking-[0.2em] text-slate-400 group-hover:text-amber-300 transition-colors duration-200">
+            Full Stack Engineer
+          </span>
+        </Link>
+
+        <div className="hidden md:flex">
+          <NavLinks links={Links} />
+        </div>
+
         <button
-          className="flex flex-col gap-1 w-8 h-8 justify-center items-center focus:outline-none"
-          onClick={() => setOpen(!open)}
+          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-slate-100 transition-colors hover:bg-white/10"
+          onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
+          aria-expanded={open}
         >
-          <motion.span
-            className="block w-8 h-1 bg-white rounded"
-            variants={Topvariants}
-            animate={open ? "opened" : "closed"}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.span
-            className="block w-8 h-1 bg-white rounded"
-            variants={middleVariants}
-            animate={open ? "opened" : "closed"}
-            transition={{ duration: 0.3 }}
-          />
-          <motion.span
-            className="block w-8 h-1 bg-white rounded"
-            variants={bottomVariants}
-            animate={open ? "opened" : "closed"}
-            transition={{ duration: 0.3 }}
-          />
+          <span className="sr-only">Menu</span>
+          <div className="flex flex-col gap-1.5">
+            <span
+              className={`h-0.5 w-5 bg-current transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+            />
+            <span
+              className={`h-0.5 w-5 bg-current transition-opacity ${open ? "opacity-0" : "opacity-100"}`}
+            />
+            <span
+              className={`h-0.5 w-5 bg-current transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+            />
+          </div>
         </button>
-      </div>
-      {/* Mobile NavLinks */}
-      <motion.div
-        className={`fixed top-16 right-0 w-64 h-screen bg-gradient-to-b from-blue-600 via-purple-500 to-pink-400 dark:bg-black shadow-2xl flex flex-col gap-8 p-8 md:hidden transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
-        variants={ListVariants}
-        animate={open ? "opened" : "closed"}
-        initial="closed"
+      </nav>
+
+      <div
+        className={`md:hidden border-t border-white/10 bg-slate-950/95 transition-all duration-200 ${open ? "max-h-64" : "max-h-0 overflow-hidden"}`}
       >
-        <NavLinks links={Links} />
-      </motion.div>
-    </nav>
+        <div className="section-shell py-4">
+          <NavLinks links={Links} onNavigate={() => setOpen(false)} mobile />
+        </div>
+      </div>
+    </header>
   );
 };
 

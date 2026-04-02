@@ -12,7 +12,7 @@ import Achievements from "./components/Achievements";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-blue-100 to-red-50">
+    <div className="space-y-1">
       <AboutMe />
       <Expertise />
       <Certification />

@@ -2,13 +2,14 @@
 import React from "react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear(); // Get the current year
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="w-full flex justify-center items-center h-24 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-400 text-white shadow-xl mt-12">
-      <p className="text-xs sm:text-sm md:text-base font-semibold tracking-wide drop-shadow-lg">
-        © {currentYear} <span className="font-bold">Junaid Faiz</span>. All
-        rights reserved.
-      </p>
+    <footer className="section-shell mt-10">
+      <div className="panel flex flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-slate-300 sm:flex-row">
+        <p>© {currentYear} Junaid Faiz. All rights reserved.</p>
+        <p className="text-slate-400">Full Stack Developer</p>
+      </div>
     </footer>
   );
 };

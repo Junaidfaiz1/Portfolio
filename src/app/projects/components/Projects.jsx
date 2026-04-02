@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
@@ -66,6 +65,17 @@ const projectsData = [
     description:
       "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
     image: "/Fyp.jpg",
+    demoLink: "",
+    githubLink:
+      "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
+    tags: ["React", "ETh Blockchhain", "Boostrap", "Solidity"],
+  },
+  {
+    id: 5,
+    title: "Antique Preservation System",
+    description:
+      "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
+    image: "/Fyp.jpg",
 
     githubLink:
       "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
@@ -75,67 +85,57 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-blue-50 to-purple-50 ">
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <motion.h2
-            className="text-5xl font-extrabold pb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+    <section className="section-shell py-8 sm:py-12">
+      <div className="panel p-6 sm:p-10">
+        <div className="mb-8">
+          <h2 className="pb-2 text-3xl font-bold text-slate-100 sm:text-4xl">
             My Projects
-          </motion.h2>
-          <motion.p
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            Explore a selection of my projects across web development, showcasing creativity and technical expertise.
-          </motion.p>
+          </h2>
+          <p className="max-w-3xl text-sm text-slate-300 sm:text-base">
+            Selected work focused on practical product outcomes, maintainable
+            architecture, and user-centered experiences.
+          </p>
         </div>
 
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projectsData.map((project) => (
-            <motion.div
+            <article
               key={project.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-slate-900/65"
             >
-              <div className="relative w-full h-56 md:w-[300px] md:h-[200px] mx-auto">
+              <div className="relative h-52 w-full overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-xl"
+                  fill
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/35 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3">
+              <div className="space-y-3 p-5">
+                <h3 className="text-xl font-semibold text-slate-100 sm:text-2xl">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <p className="text-sm leading-relaxed text-slate-300">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="text-xs px-3 py-1 rounded-full bg-purple-10 text-purple-600"
+                      className="rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-200"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 pt-2">
                   {project.githubLink && (
                     <a
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-gray-700 hover:underline"
+                      className="flex items-center gap-1 text-sm font-semibold text-cyan-300 transition-colors hover:text-cyan-200"
                     >
                       <Github size={16} /> Code
                     </a>
@@ -145,14 +145,14 @@ const Projects = () => {
                       href={project.demoLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-blue-600 hover:underline"
+                      className="flex items-center gap-1 text-sm font-semibold text-amber-300 transition-colors hover:text-amber-200"
                     >
                       <ExternalLink size={16} /> Live Demo
                     </a>
                   )}
                 </div>
               </div>
-            </motion.div>
+            </article>
           ))}
         </div>
       </div>

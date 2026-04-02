@@ -1,14 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import ContactUs from "./components/contact-us";
-const  Contact=() =>{
-    return (
-        <div className=" bg-gradient-to-b from-blue-100 to-red-50">
-        <ContactUs/>
-        </div>
-      
-    );
-  }
+const Contact = () => {
+  return (
+    <div>
+      <ContactUs />
+    </div>
+  );
+};
 
-  export default Contact;
-  
+export default Contact;

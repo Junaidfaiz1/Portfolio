@@ -1,15 +1,17 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear(); // Get the current year
-    return (
-        <div className="flex justify-center items-center h-24 bg-gradient-to-b from-blue-500 to-purple-500 text-white shadow-inner">
-            <p className="text-sm md:text-base font-medium">
-                © {currentYear} <span className="font-bold">Junaid Faiz</span>. All rights reserved.
-            </p>
-        </div>
-    );
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="section-shell mt-10">
+      <div className="panel flex flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-slate-300 sm:flex-row">
+        <p>© {currentYear} Junaid Faiz. All rights reserved.</p>
+        <p className="text-slate-400">Full Stack Developer</p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

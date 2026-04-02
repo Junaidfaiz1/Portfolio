@@ -3,39 +3,35 @@ import React from "react";
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col items-center md:mt-0 mt-24  p-4">
-      <h1 className="text-4xl font-bold mb-4 mt-6 text-center">About Me</h1>
-      <p className="text-lg text-gray-700 max-w-2xl text-start md:w-screen md:text-start">
-        I am a passionate and dedicated MERN stack developer with a knack for
-        building dynamic, responsive, and scalable web applications. Leveraging
-        modern technologies like MongoDB, Express.js, React, and Node.js, I
-        craft full-stack solutions that are not only seamless but also
-        user-focused.
-        <br />
-        <br />
-        Currently, I specialize in working with Next.js, a powerful framework
-        that enhances React&apos;s capabilities, enabling me to deliver fast,
-        SEO-friendly, and feature-rich web applications. From solving complex
-        problems to continuously exploring emerging technologies, I thrive on
-        staying at the forefront of the ever-evolving web development landscape.
-        <br />
-        <br />
-        With a strong foundation in both front-end and back-end development, I
-        am driven to create impactful digital experiences. I invite you to
-        explore my portfolio and see how my skills and passion come to life in
-        the projects I&apos;ve built. Let&apos;s build something amazing
-        together!
-      </p>
-      <div className="flex mt-6 justify-end md:justify-self-end w-full md:w-2/3">
-        <Image
-          src="/signature.svg"
-          width={90}
-          height={90}
-          alt="Signature"
-          className="mt-4 "
-        />
+    <section className="section-shell py-8 sm:py-12">
+      <div className="panel grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[1fr_auto]">
+        <div className="space-y-4">
+          <h2 className="text-3xl font-bold text-slate-100 sm:text-4xl">
+            About Me
+          </h2>
+          <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
+            I build software that balances business goals, user experience, and
+            engineering quality. Over the last 1+ years, I have delivered
+            end-to-end products, from architecture and API design to polished
+            frontend experiences.
+          </p>
+          <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
+            My approach is pragmatic: strong foundations, clear communication,
+            and shipping continuously. I enjoy collaborating with product teams
+            and mentoring developers to raise overall delivery standards.
+          </p>
+        </div>
+        <div className="mx-auto w-fit rounded-2xl border border-white/10 bg-gray-200 p-4">
+          <Image
+            src="/signature.svg"
+            width={120}
+            height={120}
+            alt="Signature"
+            className="opacity-90"
+          />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -5,63 +5,70 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <main className="flex flex-col lg:flex-row h-full px-6 sm:px-12 md:px-16 lg:px-24 xl:px-48 ">
-      {/* Image Section */}
-      <section className="w-full lg:w-1/2 h-[400px] lg:h-full relative flex items-center justify-center">
-        <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-lg border-4 border-blue-600">
-          <Image
-            src="/junaidfaiz.jpg"
-            alt="Junaid Faiz - MERN Stack Developer"
-            className="object-cover"
-            fill
-            priority
-          />
-        </div>
-      </section>
-
-      {/* Text Section */}
-      <section className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start gap-8 text-center lg:text-left mt-8 lg:mt-0">
-        {/* Title Section */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-800">
-          Hi, I&apos;m <span className="text-blue-600">Junaid Faiz</span>
-        </h1>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700">
-          MERN Stack Developer
-        </h2>
-
-        {/* Description Section */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-600">
-          I specialize in building modern, scalable, and responsive web
-          applications using MongoDB, Express.js, React, and Node.js. Let&apos;s
-          create something amazing together!
-        </p>
-
-        {/* Button Section */}
-        <div className="w-full flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <button
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-all"
-            aria-label="View Projects"
-          >
-            <Link href="projects">View Projects</Link>
-          </button>
-          <button
-            className="text-blue-600 border border-blue-600 px-6 py-3 rounded-lg shadow-md hover:bg-blue-100 transition-all"
-            aria-label="Download Resume"
-          >
+    <section className="section-shell py-8 sm:py-12 lg:py-20">
+      <div className="panel grid items-center gap-8 p-6 sm:p-10 lg:grid-cols-[1.15fr_0.85fr] lg:p-14">
+        <div className="order-2 space-y-6 lg:order-1">
+          <p className="inline-flex rounded-full border border-amber-300/30 bg-amber-200/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
+            1+ Years Building Web Products
+          </p>
+          <h1 className="text-4xl font-bold leading-tight text-slate-100 sm:text-5xl lg:text-6xl">
+            Full Stack Developer Delivering Reliable, Scalable Digital Platforms
+          </h1>
+          <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            I am Junaid Faiz, a developer focused on shipping production-ready
+            applications with clean architecture, fast performance, and
+            maintainable code. I work across React, Next.js, Node.js, NestJS,
+            and Prisma to turn complex requirements into products users trust.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-slate-200">
+              React & Next.js
+            </span>
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-slate-200">
+              API & Backend Systems
+            </span>
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm text-slate-200">
+              Performance & UX
+            </span>
+          </div>
+          <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+            <Link
+              href="/projects"
+              className="inline-flex items-center justify-center rounded-xl bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-amber-300"
+            >
+              Explore Projects
+            </Link>
             <a
               download={true}
-              href="/Junaid Faiz Resume(full stack).pdf"
+              href="/Junaid Faiz MERN Stack.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-100 transition-colors hover:bg-white/10"
             >
-              {" "}
               Download Resume
             </a>
-            {/* <span className="font-semibold">Download Resume</span> */}
-          </button>
+          </div>
         </div>
-      </section>
-    </main>
+
+        <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+          <div className="relative w-64 overflow-hidden rounded-3xl border border-white/20 bg-slate-900/70 p-3 shadow-2xl sm:w-80">
+            <div className="relative h-80 w-full overflow-hidden rounded-2xl sm:h-96">
+              <Image
+                src="/junaidfaiz.jpg"
+                alt="Junaid Faiz - Full Stack Developer"
+                className="object-cover"
+                fill
+                priority
+              />
+            </div>
+            <div className="mt-3 rounded-xl border border-white/10 bg-slate-900/80 p-3 text-sm text-slate-300">
+              Focused on long-term maintainability, product thinking, and
+              measurable engineering impact.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

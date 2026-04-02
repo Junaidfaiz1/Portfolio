@@ -6,17 +6,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Junaid Faiz Portfolio",
   description: "A portfolio website to showcase my work",
- 
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Transition>
-          {children}
-        </Transition>
-      
+        <Transition>{children}</Transition>
       </body>
     </html>
   );

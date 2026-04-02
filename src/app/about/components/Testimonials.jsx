@@ -8,8 +8,9 @@ const Testimonials = () => (
       </h2>
       <div className="w-full text-center">
         <blockquote className="italic text-lg text-gray-700 dark:text-gray-300 mb-4">
-          "Junaid transformed our business platform with a robust, scalable web
-          app. His communication and technical skills are top-notch."
+          &ldquo;Junaid transformed our business platform with a robust,
+          scalable web app. His communication and technical skills are
+          top-notch.&rdquo;
         </blockquote>
         <span className="font-semibold text-blue-600">
           Sarah Ahmed, Product Manager, BizPlatform
@@ -17,8 +18,9 @@ const Testimonials = () => (
       </div>
       <div className="w-full text-center">
         <blockquote className="italic text-lg text-gray-700 dark:text-gray-300 mb-4">
-          "Working with Junaid on our design system was seamless. He delivered
-          pixel-perfect UI and optimized performance beyond expectations."
+          &ldquo;Working with Junaid on our design system was seamless. He
+          delivered pixel-perfect UI and optimized performance beyond
+          expectations.&rdquo;
         </blockquote>
         <span className="font-semibold text-purple-600">
           Alex Kim, Lead Designer, CreativeCollab
@@ -26,8 +28,9 @@ const Testimonials = () => (
       </div>
       <div className="w-full text-center">
         <blockquote className="italic text-lg text-gray-700 dark:text-gray-300 mb-4">
-          "Junaid's expertise in API development and backend architecture helped
-          us scale our SaaS product efficiently. Highly recommended."
+          &ldquo;Junaid&apos;s expertise in API development and backend
+          architecture helped us scale our SaaS product efficiently. Highly
+          recommended.&rdquo;
         </blockquote>
         <span className="font-semibold text-emerald-600">
           Michael Lee, CTO, SaaSify

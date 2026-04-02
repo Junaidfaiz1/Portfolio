@@ -12,7 +12,7 @@ const HeroSection = () => {
             1+ Years Building Web Products
           </p>
           <h1 className="text-4xl font-bold leading-tight text-slate-100 sm:text-5xl lg:text-6xl">
-            Full Stack Developer Delivering Reliable, Scalable Digital Platforms
+            Full Stack Developer
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             I am Junaid Faiz, a developer focused on shipping production-ready

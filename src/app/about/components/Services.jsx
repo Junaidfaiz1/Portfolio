@@ -7,6 +7,11 @@ const services = [
       "Designing and delivering secure, scalable web apps with modern frontend and backend architecture.",
   },
   {
+    title: "AI & LLM Engineering",
+    description:
+      "Building intelligent features powered by LangChain, LangGraph, and model APIs — from streaming chatbots with tool calling to AI-driven document analysis pipelines.",
+  },
+  {
     title: "API Design & Integration",
     description:
       "Building REST and GraphQL APIs with clear contracts, validation, and performance-focused patterns.",

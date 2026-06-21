@@ -12,13 +12,16 @@ const AboutMe = () => {
           <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
             I build software that balances business goals, user experience, and
             engineering quality. Over the last 1+ years, I have delivered
-            end-to-end products, from architecture and API design to polished
-            frontend experiences.
+            end-to-end products — from architecture and API design to polished
+            frontend experiences and AI-powered features using LangChain,
+            LangGraph, and leading model APIs.
           </p>
           <p className="text-base leading-relaxed text-slate-300 sm:text-lg">
             My approach is pragmatic: strong foundations, clear communication,
-            and shipping continuously. I enjoy collaborating with product teams
-            and mentoring developers to raise overall delivery standards.
+            and shipping continuously. Whether it is building scalable APIs,
+            crafting interactive UIs, or engineering LLM-driven tools like
+            streaming chatbots and document analysis pipelines, I focus on
+            delivering measurable impact.
           </p>
         </div>
         <div className="mx-auto w-fit rounded-2xl border border-white/10 bg-gray-200 p-4">

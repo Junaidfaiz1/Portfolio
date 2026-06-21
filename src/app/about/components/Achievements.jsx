@@ -1,10 +1,9 @@
 import React from "react";
 import {
   Server,
-  // Zap,
   Database,
-  // Users,
   Link,
+  BrainCircuit,
 } from "lucide-react";
 
 const achievements = [
@@ -13,21 +12,17 @@ const achievements = [
     text: "Delivered and maintained scalable MERN and Next.js products in production.",
   },
   {
+    icon: BrainCircuit,
+    text: "Engineered AI-powered features using OpenAI API, including streaming chatbots with function/tool calling and AI-driven contract analysis tools.",
+  },
+  {
     icon: Link,
     text: "Integrated REST and GraphQL services with robust validation and error handling.",
   },
-  // {
-  //   icon: Zap,
-  //   text: "Improved release flow with CI/CD automation and deployment standardization.",
-  // },
   {
     icon: Database,
     text: "Optimized API/database performance for better response time and lower costs.",
   },
-  // {
-  //   icon: Users,
-  //   text: "Mentored developers through code reviews, architecture sessions, and pair programming.",
-  // },
 ];
 
 const Achievements = () => (

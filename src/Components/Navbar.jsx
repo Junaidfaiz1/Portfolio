@@ -27,7 +27,7 @@ const Navbar = () => {
             Junaid Faiz
           </span>
           <span className="text-xs uppercase tracking-[0.2em] text-slate-400 group-hover:text-amber-300 transition-colors duration-200">
-            Full Stack Engineer
+            Full Stack Developer & AI Engineer
           </span>
         </Link>
 

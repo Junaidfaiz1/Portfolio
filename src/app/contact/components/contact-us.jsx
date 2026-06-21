@@ -45,9 +45,9 @@ const ContactUs = () => {
             Get in Touch
           </h2>
           <p className="mb-8 text-sm leading-relaxed text-slate-300 sm:text-base">
-            If you are hiring for a full stack role, need technical
-            consultation, or want to collaborate on a product, feel free to
-            reach out.
+            If you are hiring for a full stack or AI engineering role, need
+            technical consultation, or want to collaborate on a product, feel
+            free to reach out.
           </p>
           <div className="space-y-4 text-slate-200">
             <div className="flex items-center gap-3">

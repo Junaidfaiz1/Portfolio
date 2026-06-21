@@ -3,13 +3,43 @@
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 
-// Sample project data
 const projectsData = [
   {
     id: 1,
+    title: "Dent-Ment",
+    description:
+      "A LinkedIn-style professional networking and learning platform for the dental community, featuring social feeds, mentor-student booking, events, live audio group calls, course management with quizzes, and an AI-powered streaming chatbot with function/tool calling and AI-driven contract analysis.",
+    image: "/smartlib.png",
+    demoLink: "https://dent-ment.com",
+    githubLink: "",
+    tags: [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "MongoDB",
+      "GraphQL",
+      "OpenAI API",
+      "LangChain",
+      "AWS",
+      "Stripe",
+      "LiveKit",
+    ],
+  },
+  {
+    id: 2,
+    title: "Lubaan Roots",
+    description:
+      "An eCommerce website for skincare products offering a modern, user-friendly shopping experience with product listings, checkout flows, and Strapi CMS for content and order management.",
+    image: "/shopcart.png",
+    demoLink: "https://lubaanroots.com",
+    githubLink: "",
+    tags: ["React", "Strapi CMS", "Tailwind CSS"],
+  },
+  {
+    id: 3,
     title: "Smart Library",
     description:
-      "A smart library management system with user authentication, Over and borrowing Books features, pay fine and return books.",
+      "A smart library management system with user authentication, borrowing books features, pay fine and return books.",
     image: "/smartlib.png",
     demoLink: "https://smartlib.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/LibraryManagement",
@@ -23,20 +53,20 @@ const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     title: "Shop Cart Website",
     description:
-      "The platform includes intuitive navigation, Favourite products, and an optimized shopping cart for enhanced functionality.",
+      "The platform includes intuitive navigation, favourite products, and an optimized shopping cart for enhanced functionality.",
     image: "/shopcart.png",
     demoLink: "https://ecom145.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/ECOM",
-    tags: ["React", "ReduxToolKit", "MUI (Material UI)"],
+    tags: ["React", "Redux Toolkit", "MUI (Material UI)"],
   },
   {
-    id: 3,
+    id: 5,
     title: "Blog Insite",
     description:
-      "A Multi-User Blogging Platform I developed Blog Insite, a scalable and intuitive multi-user blogging platform where users can write and share articles across diverse topics, including Finance, Technology, and Lifestyle.",
+      "A scalable multi-user blogging platform where users can write and share articles across diverse topics, including Finance, Technology, and Lifestyle.",
     image: "/blogger.png",
     demoLink: "https://blogger-insite.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/blogger",
@@ -46,11 +76,10 @@ const projectsData = [
       "Express.js",
       "MongoDB",
       "Tailwind CSS",
-      "Neomorphic Design",
     ],
   },
   {
-    id: 4,
+    id: 6,
     title: "Tennis Website",
     description:
       "A Tennis website that provides information about tennis tournaments, players, and news. It features a user-friendly interface and responsive design.",
@@ -60,7 +89,7 @@ const projectsData = [
     tags: ["React", "Firebase", "Material UI"],
   },
   {
-    id: 5,
+    id: 7,
     title: "Antique Preservation System",
     description:
       "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
@@ -68,18 +97,7 @@ const projectsData = [
     demoLink: "",
     githubLink:
       "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
-    tags: ["React", "ETh Blockchhain", "Boostrap", "Solidity"],
-  },
-  {
-    id: 5,
-    title: "Antique Preservation System",
-    description:
-      "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
-    image: "/Fyp.jpg",
-
-    githubLink:
-      "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
-    tags: ["React", "ETh Blockchhain", "Boostrap", "Solidity"],
+    tags: ["React", "Ethereum Blockchain", "Bootstrap", "Solidity"],
   },
 ];
 

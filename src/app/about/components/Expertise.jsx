@@ -6,6 +6,7 @@ import {
   BookOpen,
   Database,
   ShieldCheck,
+  BrainCircuit,
 } from "lucide-react";
 
 const items = [
@@ -15,9 +16,15 @@ const items = [
     details: "JavaScript, TypeScript",
   },
   {
+    icon: BrainCircuit,
+    title: "LLM Frameworks & Model APIs",
+    details:
+      "LangChain, LangGraph, OpenAI API, Anthropic Claude API, Google Gemini API",
+  },
+  {
     icon: BadgeCheck,
     title: "Frameworks & Libraries",
-    details: "React.js, Next.js, Node.js, Nest.js, Express.js, GraphQL",
+    details: "React.js, Next.js, Node.js, Nest.js, Express.js, GraphQL, Socket.IO",
   },
   {
     icon: BookOpen,
@@ -32,7 +39,7 @@ const items = [
   {
     icon: ShieldCheck,
     title: "Validation & Forms",
-    details: "Zod, Formik, React Hook Form, Class Validator",
+    details: "Zod, Formik, React Hook Form, Class Validator, Class Transformer",
   },
 ];
 

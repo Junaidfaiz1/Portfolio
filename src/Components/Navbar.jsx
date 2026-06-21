@@ -12,54 +12,73 @@ const Links = [
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
     const closeMenu = () => setOpen(false);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("resize", closeMenu);
-    return () => window.removeEventListener("resize", closeMenu);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("resize", closeMenu);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
-      <nav className="section-shell flex h-20 items-center justify-between">
-        <Link href="/" className="group flex flex-col leading-tight">
-          <span className="text-lg font-semibold tracking-wide text-slate-100">
-            Junaid Faiz
-          </span>
-          <span className="text-xs uppercase tracking-[0.2em] text-slate-400 group-hover:text-amber-300 transition-colors duration-200">
-            Full Stack Engineer
-          </span>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-slate-200/60 bg-white/90 shadow-sm shadow-slate-200/50 backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="section-shell flex h-16 items-center justify-between sm:h-20">
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 text-sm font-bold text-white shadow-md shadow-violet-200/50">
+            JF
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-bold tracking-wide text-slate-800">
+              Junaid Faiz
+            </span>
+            <span className="hidden text-[10px] font-medium uppercase tracking-[0.15em] text-slate-400 sm:block">
+              Developer & AI Engineer
+            </span>
+          </div>
         </Link>
 
-        <div className="hidden md:flex">
+        <div className="hidden md:flex md:items-center md:gap-1">
           <NavLinks links={Links} />
         </div>
 
         <button
-          className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-slate-100 transition-colors hover:bg-white/10"
+          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-500 transition-all hover:bg-slate-100 hover:text-slate-800"
           onClick={() => setOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
           aria-expanded={open}
         >
           <span className="sr-only">Menu</span>
-          <div className="flex flex-col gap-1.5">
+          <div className="flex flex-col gap-[5px]">
             <span
-              className={`h-0.5 w-5 bg-current transition-transform ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`h-[1.5px] w-[18px] bg-current transition-all duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`}
             />
             <span
-              className={`h-0.5 w-5 bg-current transition-opacity ${open ? "opacity-0" : "opacity-100"}`}
+              className={`h-[1.5px] w-[18px] bg-current transition-all duration-300 ${open ? "opacity-0" : "opacity-100"}`}
             />
             <span
-              className={`h-0.5 w-5 bg-current transition-transform ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`h-[1.5px] w-[18px] bg-current transition-all duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`}
             />
           </div>
         </button>
       </nav>
 
       <div
-        className={`md:hidden border-t border-white/10 bg-slate-950/95 transition-all duration-200 ${open ? "max-h-64" : "max-h-0 overflow-hidden"}`}
+        className={`md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-xl transition-all duration-300 ease-out ${
+          open ? "max-h-72 opacity-100" : "max-h-0 overflow-hidden opacity-0"
+        }`}
       >
-        <div className="section-shell py-4">
+        <div className="section-shell py-3 pb-5">
           <NavLinks links={Links} onNavigate={() => setOpen(false)} mobile />
         </div>
       </div>

@@ -7,7 +7,7 @@ const Transition = ({ children }) => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
-      <main className="pt-24 pb-10">{children}</main>
+      <main className="pt-20 pb-10 sm:pt-24">{children}</main>
     </div>
   );
 };

@@ -2,14 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, User, FolderOpen, Mail } from "lucide-react";
-
-const iconMap = {
-  Home: <Home className="w-5 h-5 mr-2" />,
-  About: <User className="w-5 h-5 mr-2" />,
-  Projects: <FolderOpen className="w-5 h-5 mr-2" />,
-  Contact: <Mail className="w-5 h-5 mr-2" />,
-};
 
 const NavLinks = ({ links, mobile = false, onNavigate }) => {
   const pathName = usePathname();
@@ -19,16 +11,15 @@ const NavLinks = ({ links, mobile = false, onNavigate }) => {
       key={index}
       href={link.url}
       onClick={onNavigate}
-      className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium tracking-wide transition-colors ${
-        mobile ? "w-full" : ""
+      className={`rounded-lg px-4 py-2 text-[13px] font-medium transition-all duration-200 ${
+        mobile ? "flex w-full py-2.5" : ""
       } ${
         pathName === link.url
-          ? "bg-amber-400/20 text-amber-300"
-          : "text-slate-200 hover:bg-white/10 hover:text-white"
+          ? "bg-violet-50 text-violet-700"
+          : "text-slate-500 hover:bg-slate-50 hover:text-slate-800"
       }`}
     >
-      {iconMap[link.title]}
-      <span>{link.title}</span>
+      {link.title}
     </Link>
   ));
 };

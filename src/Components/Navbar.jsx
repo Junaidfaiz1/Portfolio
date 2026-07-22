@@ -33,7 +33,7 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="section-shell flex h-16 items-center justify-between sm:h-20">
+      <nav className="section-shell    flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="group flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 text-sm font-bold text-white shadow-md shadow-violet-200/50">
             JF

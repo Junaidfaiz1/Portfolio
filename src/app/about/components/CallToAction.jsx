@@ -1,21 +1,24 @@
-import React from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => (
-  <section className="flex items-center justify-center min-h-[20vh] bg-gradient-to-br from-purple-900 via-pink-700 to-yellow-400 px-2 sm:px-4 py-6 sm:py-12 animate-fadeIn">
-    <div className="max-w-xl w-full bg-white/90 dark:bg-gray-900/90 rounded-3xl shadow-2xl p-8 flex flex-col items-center gap-6">
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-blue-600 text-center mb-2">
-        Ready to Collaborate?
+  <section className="section-shell py-10 sm:py-14" aria-labelledby="cta-heading">
+    <div className="glass-card flex flex-col items-center gap-5 px-6 py-10 text-center sm:px-10">
+      <h2 id="cta-heading" className="section-title text-2xl sm:text-3xl">
+        Ready to <span className="gradient-text">collaborate</span>?
       </h2>
-      <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 text-center">
-        Let&apos;s turn your ideas into reality. Reach out for web development,
-        UI/UX, or creative projects!
+      <p className="section-desc max-w-xl">
+        Reach out for full stack development, AI engineering, or product
+        collaboration — or browse selected projects first.
       </p>
-      <a
-        href="/contact"
-        className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition-all font-semibold text-base"
-      >
-        Contact Me
-      </a>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Link href="/contact" className="btn-primary">
+          Contact Junaid Faiz <ArrowRight size={15} />
+        </Link>
+        <Link href="/projects" className="btn-secondary">
+          View full stack projects
+        </Link>
+      </div>
     </div>
   </section>
 );

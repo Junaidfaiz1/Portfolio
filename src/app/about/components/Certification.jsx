@@ -21,7 +21,7 @@ const certifications = [
 ];
 
 const Certification = () => (
-  <section className="section-shell py-16 sm:py-20">
+  <section className="section-shell py-16">
     <div className="mb-12 text-center">
       <div className="mb-4 flex justify-center">
         <span className="section-label">

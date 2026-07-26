@@ -51,7 +51,7 @@ const services = [
 ];
 
 const Services = () => (
-  <section className="relative overflow-hidden py-16 sm:py-20">
+  <section className="relative overflow-hidden py-16">
     {/* Decorative background */}
     <div className="pointer-events-none absolute inset-0">
       <div className="absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-violet-100/40 blur-[100px]" />

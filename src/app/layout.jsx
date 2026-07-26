@@ -1,60 +1,62 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Transition from "@/Components/Transition";
-const inter = Inter({ subsets: ["latin"] });
+import JsonLd from "@/Components/JsonLd";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE_DEFAULT,
+  SITE_DESCRIPTION,
+  DEFAULT_KEYWORDS,
+  OG_IMAGE,
+  personSchema,
+  websiteSchema,
+  organizationSchema,
+} from "@/lib/seo";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata = {
-  metadataBase: new URL("https://junaidfaiz.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Junaid Faiz — Full Stack Developer & AI Engineer",
-    template: "%s | Junaid Faiz",
+    default: SITE_TITLE_DEFAULT,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Portfolio of Junaid Faiz — Full Stack Developer & AI Engineer based in Lahore, Pakistan. Specializing in React, Next.js, Node.js, NestJS, LangChain, LangGraph, and AI-powered web applications.",
-  keywords: [
-    "Junaid Faiz",
-    "Full Stack Developer",
-    "AI Engineer",
-    "MERN Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Node.js Developer",
-    "NestJS Developer",
-    "LangChain Developer",
-    "LangGraph",
-    "OpenAI API",
-    "LLM Engineer",
-    "GraphQL",
-    "MongoDB",
-    "Prisma",
-    "Socket.IO",
-    "Lahore Pakistan",
-    "Web Developer Pakistan",
-  ],
-  authors: [{ name: "Junaid Faiz" }],
-  creator: "Junaid Faiz",
+  description: SITE_DESCRIPTION,
+  keywords: DEFAULT_KEYWORDS,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "technology",
+  applicationName: `${SITE_NAME} Portfolio`,
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Junaid Faiz — Portfolio",
-    title: "Junaid Faiz — Full Stack Developer & AI Engineer",
-    description:
-      "Full Stack Developer & AI Engineer building production-ready web apps and LLM-powered features with React, Next.js, Node.js, NestJS, LangChain, and LangGraph.",
-    images: [
-      {
-        url: "/junaidfaiz.jpg",
-        width: 800,
-        height: 600,
-        alt: "Junaid Faiz — Full Stack Developer & AI Engineer",
-      },
-    ],
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: SITE_TITLE_DEFAULT,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Junaid Faiz — Full Stack Developer & AI Engineer",
-    description:
-      "Full Stack Developer & AI Engineer building production-ready web apps and LLM-powered features with React, Next.js, Node.js, NestJS, LangChain, and LangGraph.",
-    images: ["/junaidfaiz.jpg"],
+    title: SITE_TITLE_DEFAULT,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE.url],
+    creator: "@JunaidFaiz",
   },
   robots: {
     index: true,
@@ -67,61 +69,37 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#4f46e5" },
+    { media: "(prefers-color-scheme: dark)", color: "#4f46e5" },
+  ],
+  // Add Bing / Yandex / Pinterest codes when you have them:
+  // yandex: "...", other: { "msvalidate.01": "...", "p:domain_verify": "..." }
   verification: {
     google: "2SmbFkTTbLXA0U7S8OUPsmR8F2Ulfa3SAa1-XjSZDrU",
   },
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = [
+    personSchema(),
+    websiteSchema(),
+    organizationSchema(),
+  ];
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Junaid Faiz",
-              url: "https://junaidfaiz.vercel.app",
-              image: "https://junaidfaiz.vercel.app/junaidfaiz.jpg",
-              jobTitle: "Full Stack Developer & AI Engineer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Cipher Developers",
-              },
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Lahore",
-                addressCountry: "PK",
-              },
-              email: "junaidfaizpk5@gmail.com",
-              telephone: "+923106846035",
-              sameAs: [
-                "https://linkedin.com/in/junaid-faiz/",
-                "https://github.com/Junaidfaiz1",
-              ],
-              knowsAbout: [
-                "React",
-                "Next.js",
-                "Node.js",
-                "NestJS",
-                "LangChain",
-                "LangGraph",
-                "OpenAI API",
-                "GraphQL",
-                "MongoDB",
-                "Prisma",
-                "TypeScript",
-                "Socket.IO",
-              ],
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "University of Education",
-              },
-            }),
-          }}
-        />
+      <body className={`${inter.className} ${inter.variable}`}>
+        <JsonLd data={structuredData} />
         <Transition>{children}</Transition>
       </body>
     </html>

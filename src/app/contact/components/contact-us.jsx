@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Mail, Send, ArrowUpRight } from "lucide-react";
 
-const ContactUs = () => {
+const ContactUs = ({ titleAs = "h2" }) => {
   const [formdata, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +10,7 @@ const ContactUs = () => {
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
+  const TitleTag = titleAs === "h1" ? "h1" : "h2";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,7 +54,10 @@ const ContactUs = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden py-16 sm:py-20">
+    <section
+      className="relative overflow-hidden py-16"
+      aria-labelledby="contact-heading"
+    >
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -right-20 top-0 h-[400px] w-[400px] rounded-full bg-violet-100/50 blur-[100px]" />
@@ -65,9 +69,9 @@ const ContactUs = () => {
           <div className="mb-4 flex justify-center">
             <span className="section-label">Contact</span>
           </div>
-          <h2 className="section-title">
+          <TitleTag id="contact-heading" className="section-title">
             Let&apos;s work <span className="gradient-text">together</span>
-          </h2>
+          </TitleTag>
           <p className="section-desc mx-auto mt-4">
             Looking for a full stack or AI engineering role, or want to
             collaborate on a product? Let&apos;s connect.
@@ -132,11 +136,17 @@ const ContactUs = () => {
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                  <label
+                    htmlFor="contact-name"
+                    className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
+                  >
                     Name
                   </label>
                   <input
+                    id="contact-name"
+                    name="name"
                     type="text"
+                    autoComplete="name"
                     placeholder="Your name"
                     className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-violet-300 focus:bg-white focus:ring-4 focus:ring-violet-50"
                     value={formdata.name}
@@ -147,11 +157,17 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                  <label
+                    htmlFor="contact-email"
+                    className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
+                  >
                     Email
                   </label>
                   <input
+                    id="contact-email"
+                    name="email"
                     type="email"
+                    autoComplete="email"
                     placeholder="your@email.com"
                     className="w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-violet-300 focus:bg-white focus:ring-4 focus:ring-violet-50"
                     value={formdata.email}
@@ -163,10 +179,15 @@ const ContactUs = () => {
                 </div>
               </div>
               <div>
-                <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">
+                <label
+                  htmlFor="contact-message"
+                  className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400"
+                >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   placeholder="Tell me about your project..."
                   className="min-h-[160px] w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-800 outline-none transition-all placeholder:text-slate-300 focus:border-violet-300 focus:bg-white focus:ring-4 focus:ring-violet-50"
                   value={formdata.message}
@@ -180,6 +201,7 @@ const ContactUs = () => {
                 type="submit"
                 className={`btn-primary w-full ${loading ? "opacity-70" : ""}`}
                 disabled={loading}
+                aria-busy={loading}
               >
                 {loading ? (
                   "Sending..."

@@ -1,0 +1,100 @@
+export const projectsData = [
+  {
+    id: 1,
+    title: "Dent-Ment",
+    description:
+      "A LinkedIn-style professional networking and learning platform for the dental community, featuring social feeds, mentor-student booking, events, live audio group calls, course management with quizzes, and an AI-powered streaming chatbot with function/tool calling and AI-driven contract analysis.",
+    image: "/smartlib.png",
+    demoLink: "https://dent-ment.com",
+    githubLink: "",
+    tags: [
+      "Next.js",
+      "NestJS",
+      "Prisma",
+      "MongoDB",
+      "GraphQL",
+      "OpenAI API",
+      "LangChain",
+      "AWS",
+      "Stripe",
+      "LiveKit",
+    ],
+    featured: true,
+    programmingLanguage: ["TypeScript", "JavaScript"],
+  },
+  {
+    id: 2,
+    title: "Lubaan Roots",
+    description:
+      "An eCommerce website for skincare products offering a modern, user-friendly shopping experience with product listings, checkout flows, and Strapi CMS for content and order management.",
+    image: "/shopcart.png",
+    demoLink: "https://lubaanroots.com",
+    githubLink: "",
+    tags: ["React", "Strapi CMS", "Tailwind CSS"],
+    featured: true,
+    programmingLanguage: ["JavaScript"],
+  },
+  {
+    id: 3,
+    title: "Smart Library",
+    description:
+      "A smart library management system with user authentication, borrowing books features, pay fine and return books.",
+    image: "/smartlib.png",
+    demoLink: "https://smartlib.vercel.app/",
+    githubLink: "https://github.com/Junaidfaiz1/LibraryManagement",
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Shadcn UI",
+    ],
+    programmingLanguage: ["JavaScript"],
+  },
+  {
+    id: 4,
+    title: "Shop Cart Website",
+    description:
+      "The platform includes intuitive navigation, favourite products, and an optimized shopping cart for enhanced functionality.",
+    image: "/shopcart.png",
+    demoLink: "https://ecom145.vercel.app/",
+    githubLink: "https://github.com/Junaidfaiz1/ECOM",
+    tags: ["React", "Redux Toolkit", "MUI (Material UI)"],
+    programmingLanguage: ["JavaScript"],
+  },
+  {
+    id: 5,
+    title: "Blog Insite",
+    description:
+      "A scalable multi-user blogging platform where users can write and share articles across diverse topics, including Finance, Technology, and Lifestyle.",
+    image: "/blogger.png",
+    demoLink: "https://blogger-insite.vercel.app/",
+    githubLink: "https://github.com/Junaidfaiz1/blogger",
+    tags: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    programmingLanguage: ["JavaScript"],
+  },
+  {
+    id: 6,
+    title: "Tennis Website",
+    description:
+      "A Tennis website that provides information about tennis tournaments, players, and news with a user-friendly and responsive design.",
+    image: "/Sports-web.png",
+    demoLink: "https://sportz-gala.vercel.app/",
+    githubLink: "https://github.com/Junaidfaiz1/Sportz-Gala",
+    tags: ["React", "Firebase", "Material UI"],
+    programmingLanguage: ["JavaScript"],
+  },
+  {
+    id: 7,
+    title: "Antique Preservation System",
+    description:
+      "A React-based DApp that stores antique data on the Ethereum blockchain using Truffle, Web3.js, and MetaMask for secure transactions.",
+    image: "/Fyp.jpg",
+    demoLink: "",
+    githubLink:
+      "https://github.com/Junaidfaiz1/Preserve-antique-using-blockchain-and-crowd-sourcing",
+    tags: ["React", "Ethereum Blockchain", "Bootstrap", "Solidity"],
+    programmingLanguage: ["JavaScript", "Solidity"],
+  },
+];

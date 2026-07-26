@@ -8,6 +8,28 @@ import Achievements from "@/app/about/components/Achievements";
 import Projects from "@/app/projects/components/Projects";
 import ContactUs from "@/app/contact/components/contact-us";
 import Footer from "@/Components/Footer";
+import JsonLd from "@/Components/JsonLd";
+import { projectsData } from "@/data/projects";
+import {
+  SITE_URL,
+  SITE_TITLE_DEFAULT,
+  SITE_DESCRIPTION,
+  buildPageMetadata,
+  breadcrumbList,
+  absoluteUrl,
+} from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: SITE_TITLE_DEFAULT,
+  description: SITE_DESCRIPTION,
+  path: "/",
+  keywords: [
+    "Junaid Faiz portfolio",
+    "Full Stack Developer portfolio",
+    "AI Engineer Lahore",
+    "React Next.js NestJS developer",
+  ],
+});
 
 function TechMarquee() {
   const techs = [
@@ -54,8 +76,43 @@ function Divider() {
 }
 
 const page = () => {
+  const creativeWorks = projectsData.slice(0, 5).map((project) => ({
+    "@type": "SoftwareSourceCode",
+    name: project.title,
+    description: project.description,
+    url: project.demoLink || project.githubLink || absoluteUrl("/projects"),
+    codeRepository: project.githubLink || undefined,
+    programmingLanguage: project.programmingLanguage,
+    image: absoluteUrl(project.image),
+    author: { "@id": `${SITE_URL}/#person` },
+  }));
+
   return (
     <>
+      <JsonLd
+        data={[
+          {
+            "@type": "ProfilePage",
+            "@id": `${SITE_URL}/#profilepage`,
+            url: SITE_URL,
+            name: SITE_TITLE_DEFAULT,
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#person` },
+            mainEntity: { "@id": `${SITE_URL}/#person` },
+          },
+          breadcrumbList([{ name: "Home", item: SITE_URL }]),
+          {
+            "@type": "ItemList",
+            "@id": `${SITE_URL}/#featured-work`,
+            name: "Featured projects by Junaid Faiz",
+            itemListElement: creativeWorks.map((work, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              item: work,
+            })),
+          },
+        ]}
+      />
       <HeroSection />
       <TechMarquee />
       <AboutMe />

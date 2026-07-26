@@ -1,30 +1,32 @@
+import { SITE_URL } from "@/lib/seo";
+
 export default function sitemap() {
-  const baseUrl = "https://junaidfaiz.vercel.app";
+  const lastModified = new Date();
 
   return [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      url: SITE_URL,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/projects`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      url: `${SITE_URL}/contact`,
+      lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.6,
     },
   ];
 }

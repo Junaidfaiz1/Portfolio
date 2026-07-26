@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import { Code2, Lightbulb, Rocket } from "lucide-react";
 
@@ -20,17 +19,22 @@ const highlights = [
   },
 ];
 
-const AboutMe = () => {
+const AboutMe = ({ titleAs = "h2" }) => {
+  const TitleTag = titleAs === "h1" ? "h1" : "h2";
+
   return (
-    <section className="section-shell py-16 sm:py-20">
+    <section
+      className="section-shell py-16"
+      aria-labelledby="about-heading"
+    >
       <div className="mb-12 text-center">
         <div className="mb-4 flex justify-center">
           <span className="section-label">About</span>
         </div>
-        <h2 className="section-title text-balance">
+        <TitleTag id="about-heading" className="section-title text-balance">
           Building software that{" "}
           <span className="gradient-text">makes a difference</span>
-        </h2>
+        </TitleTag>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_auto]">

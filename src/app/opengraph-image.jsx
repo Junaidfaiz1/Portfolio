@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_HOST } from "@/lib/seo";
 
 export const runtime = "edge";
 export const alt = "Junaid Faiz — Full Stack Developer & AI Engineer";
@@ -45,7 +46,7 @@ export default function OpenGraphImage() {
             JF
           </div>
           <div style={{ fontSize: 28, fontWeight: 600, opacity: 0.9 }}>
-            junaid-faiz.com
+            {SITE_HOST}
           </div>
         </div>
 

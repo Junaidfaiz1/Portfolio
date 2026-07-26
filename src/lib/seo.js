@@ -1,4 +1,11 @@
-export const SITE_URL = "https://junaid-faiz.com";
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  process.env.SITE_URL?.trim() ||
+  "https://www.junaid-faiz.pk";
+
+/** Canonical production origin — no trailing slash. Override via NEXT_PUBLIC_SITE_URL. */
+export const SITE_URL = rawSiteUrl.replace(/\/+$/, "");
+export const SITE_HOST = new URL(SITE_URL).host;
 export const SITE_NAME = "Junaid Faiz";
 export const SITE_TITLE_DEFAULT =
   "Junaid Faiz | Full Stack Developer | React, Next.js, NestJS";

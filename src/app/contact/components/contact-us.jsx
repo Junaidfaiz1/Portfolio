@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { MapPin, Phone, Mail, Send, ArrowUpRight } from "lucide-react";
 
 const ContactUs = ({ titleAs = "h2" }) => {
@@ -15,21 +16,24 @@ const ContactUs = ({ titleAs = "h2" }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setStatus("");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formdata),
-      });
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          name: formdata.name,
+          email: formdata.email,
+          message: formdata.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
 
-      if (!response.ok) {
-        setStatus("Could not send message. Please try again.");
-      } else {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      }
-    } catch {
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
       setStatus("Could not send message. Please try again.");
     } finally {
       setLoading(false);

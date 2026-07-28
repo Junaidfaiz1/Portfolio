@@ -89,7 +89,7 @@ const HeroSection = () => {
             </Link>
             <a
               download={true}
-              href="/Junaid Fiaz (Full Stack Developer & AI Engineer).pdf"
+              href="/Junaid Faiz - Full Stack Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

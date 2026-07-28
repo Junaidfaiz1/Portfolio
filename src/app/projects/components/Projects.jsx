@@ -14,7 +14,6 @@ const FeaturedProject = ({ project }) => (
         sizes="(max-width: 640px) 100vw, 50vw"
         className="object-cover transition-transform duration-700 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 sm:bg-gradient-to-r sm:from-transparent sm:to-white/40" />
       <div className="absolute left-3 top-3">
         <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-violet-600 shadow-sm backdrop-blur-sm">
           <Star className="h-3 w-3 fill-violet-500 text-violet-500" />
@@ -77,7 +76,6 @@ const ProjectCard = ({ project }) => (
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className="object-cover transition-transform duration-500 group-hover:scale-110"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
     </div>
     <div className="p-5">
       <h3 className="mb-1.5 text-base font-bold text-slate-800">

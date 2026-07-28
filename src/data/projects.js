@@ -4,7 +4,7 @@ export const projectsData = [
     title: "Dent-Ment",
     description:
       "A LinkedIn-style professional networking and learning platform for the dental community, featuring social feeds, mentor-student booking, events, live audio group calls, course management with quizzes, and an AI-powered streaming chatbot with function/tool calling and AI-driven contract analysis.",
-    image: "/smartlib.png",
+    image: "/dent-ment.png",
     demoLink: "https://dent-ment.com",
     githubLink: "",
     tags: [
@@ -27,7 +27,7 @@ export const projectsData = [
     title: "Lubaan Roots",
     description:
       "An eCommerce website for skincare products offering a modern, user-friendly shopping experience with product listings, checkout flows, and Strapi CMS for content and order management.",
-    image: "/shopcart.png",
+    image: "/lubaanroots.png",
     demoLink: "https://lubaanroots.com",
     githubLink: "",
     tags: ["React", "Strapi CMS", "Tailwind CSS"],
@@ -39,7 +39,7 @@ export const projectsData = [
     title: "Smart Library",
     description:
       "A smart library management system with user authentication, borrowing books features, pay fine and return books.",
-    image: "/smartlib.png",
+    image: "/library.png",
     demoLink: "https://smartlib.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/LibraryManagement",
     tags: [
@@ -57,7 +57,7 @@ export const projectsData = [
     title: "Shop Cart Website",
     description:
       "The platform includes intuitive navigation, favourite products, and an optimized shopping cart for enhanced functionality.",
-    image: "/shopcart.png",
+    image: "/shopcart12.png",
     demoLink: "https://ecom145.vercel.app/",
     githubLink: "https://github.com/Junaidfaiz1/ECOM",
     tags: ["React", "Redux Toolkit", "MUI (Material UI)"],

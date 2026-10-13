@@ -1,7 +1,7 @@
-import React from "react";
-import ContactUs from "./components/contact-us";
 import Footer from "@/Components/Footer";
 import JsonLd from "@/Components/JsonLd";
+import ContactInfo from "@/Components/sections/ContactInfo";
+import ContactForm from "@/Components/sections/ContactForm";
 import {
   SITE_URL,
   PERSON,
@@ -9,7 +9,6 @@ import {
   breadcrumbList,
   absoluteUrl,
 } from "@/lib/seo";
-import Link from "next/link";
 
 export const metadata = buildPageMetadata({
   title: "Contact",
@@ -53,26 +52,22 @@ const Contact = () => {
           ]),
         ]}
       />
-      <ContactUs titleAs="h1" />
-      <div className="section-shell pb-8 text-center">
-        <p className="text-sm text-slate-500">
-          Explore{" "}
-          <Link
-            href="/projects"
-            className="font-semibold text-violet-600 hover:text-violet-700"
-          >
-            selected projects
-          </Link>{" "}
-          or read more{" "}
-          <Link
-            href="/about"
-            className="font-semibold text-violet-600 hover:text-violet-700"
-          >
-            about Junaid Faiz
-          </Link>
-          .
-        </p>
-      </div>
+      <section className="wrap flex flex-wrap items-stretch gap-6 pt-20 md:pt-24">
+        <div className="flex flex-[1_1_380px] flex-col gap-4">
+          <div className="mb-4">
+            <p className="lbl">Contact</p>
+            <h1 className="mt-4 text-[clamp(44px,5.6vw,76px)] font-extrabold leading-none tracking-[-0.05em]">
+              Let&apos;s talk about your{" "}
+              <span className="text-[#8A8A93]">project.</span>
+            </h1>
+            <p className="mt-5 text-lg leading-relaxed text-zinc-600">
+              Tell me what you&apos;re building and I&apos;ll get back to you.
+            </p>
+          </div>
+          <ContactInfo />
+        </div>
+        <ContactForm showTopics title="Send a message" />
+      </section>
       <Footer />
     </>
   );

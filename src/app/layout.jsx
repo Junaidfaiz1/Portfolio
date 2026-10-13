@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Transition from "@/Components/Transition";
 import JsonLd from "@/Components/JsonLd";
@@ -14,11 +14,26 @@ import {
   organizationSchema,
 } from "@/lib/seo";
 
-const inter = Inter({
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
 });
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["500"],
+  variable: "--font-mono",
+});
+
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF9" },
+    { media: "(prefers-color-scheme: dark)", color: "#18181B" },
+  ],
+};
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -78,10 +93,6 @@ export const metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#4f46e5" },
-    { media: "(prefers-color-scheme: dark)", color: "#4f46e5" },
-  ],
   // Add Bing / Yandex / Pinterest codes when you have them:
   // yandex: "...", other: { "msvalidate.01": "...", "p:domain_verify": "..." }
   verification: {
@@ -98,7 +109,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${inter.className} ${inter.variable}`}>
+      <body className={`${sans.variable} ${mono.variable} font-sans`}>
         <JsonLd data={structuredData} />
         <Transition>{children}</Transition>
       </body>

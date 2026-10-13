@@ -8,17 +8,19 @@ import {
   breadcrumbList,
   absoluteUrl,
 } from "@/lib/seo";
-import Link from "next/link";
+import CtaBand from "@/Components/sections/CtaBand";
 
 export const metadata = buildPageMetadata({
   title: "Projects",
   description:
-    "Projects by Junaid Faiz — AI-powered dental networking (Dent-Ment), eCommerce (Lubaan Roots), library systems, blogging platforms, and blockchain apps built with React, Next.js, NestJS, OpenAI API, and LangChain.",
+    "Projects by Junaid Faiz — AI-powered dental networking (Dent-Ment), Technova CRM, the Vorqen PC-builder store, Lubaan Roots eCommerce, and more built with Next.js, NestJS, GraphQL, OpenAI API, and LangChain.",
   path: "/projects",
   keywords: [
     "Junaid Faiz projects",
     "Dent-Ment",
     "Lubaan Roots",
+    "Technova CRM",
+    "Vorqen",
     "Next.js NestJS portfolio",
     "AI chatbot projects",
     "full stack case studies",
@@ -71,26 +73,13 @@ const page = () => {
           })),
         ]}
       />
-      <Projects titleAs="h1" />
-      <div className="section-shell pb-8 text-center">
-        <p className="text-sm text-slate-500">
-          Want something similar?{" "}
-          <Link
-            href="/contact"
-            className="font-semibold text-violet-600 hover:text-violet-700"
-          >
-            Contact Junaid Faiz for full stack or AI engineering
-          </Link>{" "}
-          or learn more{" "}
-          <Link
-            href="/about"
-            className="font-semibold text-violet-600 hover:text-violet-700"
-          >
-            about his experience and services
-          </Link>
-          .
-        </p>
-      </div>
+      <Projects />
+      <CtaBand
+        title="Your project could be next."
+        text="Full stack builds, SaaS platforms and AI features."
+        primary={{ href: "/contact", label: "Start a project" }}
+        secondary={{ href: "/about", label: "About me" }}
+      />
       <Footer />
     </>
   );

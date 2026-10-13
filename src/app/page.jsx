@@ -1,15 +1,24 @@
-import HeroSection from "@/Components/HeroSection";
-import Skills from "@/app/about/components/Skills";
-import AboutMe from "@/app/about/components/AboutMe";
-import Expertise from "@/app/about/components/Expertise";
-import Certification from "@/app/about/components/Certification";
-import Services from "@/app/about/components/Services";
-import Achievements from "@/app/about/components/Achievements";
-import Projects from "@/app/projects/components/Projects";
-import ContactUs from "@/app/contact/components/contact-us";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Hero from "@/Components/sections/Hero";
+import TechMarquee from "@/Components/sections/TechMarquee";
+import SectionHeading from "@/Components/sections/SectionHeading";
+import ProjectCard from "@/Components/sections/ProjectCard";
+import Faq from "@/Components/sections/Faq";
+import ContactInfo from "@/Components/sections/ContactInfo";
+import ContactForm from "@/Components/sections/ContactForm";
+import {
+  AboutSection,
+  Expertise,
+  Certifications,
+  Services,
+  Process,
+  Achievements,
+  Testimonials,
+} from "@/Components/sections/Content";
 import Footer from "@/Components/Footer";
 import JsonLd from "@/Components/JsonLd";
-import { projectsData } from "@/data/projects";
+import { projectsData, homeProjectIds } from "@/data/projects";
 import {
   SITE_URL,
   SITE_TITLE_DEFAULT,
@@ -31,51 +40,11 @@ export const metadata = buildPageMetadata({
   ],
 });
 
-function TechMarquee() {
-  const techs = [
-    "React",
-    "Next.js",
-    "Node.js",
-    "NestJS",
-    "TypeScript",
-    "GraphQL",
-    "MongoDB",
-    "Prisma",
-    "LangChain",
-    "LangGraph",
-    "OpenAI",
-    "Tailwind CSS",
-    "Socket.IO",
-    "AWS",
-  ];
-
-  return (
-    <div className="relative overflow-hidden py-10">
-      <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#fafafa] to-transparent" />
-      <div className="absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#fafafa] to-transparent" />
-      <div className="flex animate-marquee whitespace-nowrap">
-        {[...techs, ...techs].map((tech, i) => (
-          <span
-            key={i}
-            className="mx-4 text-lg font-semibold text-gray-600 sm:mx-6 sm:text-xl"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function Divider() {
-  return (
-    <div className="section-shell">
-      <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-    </div>
-  );
-}
-
 const page = () => {
+  const homeProjects = homeProjectIds.map((id) =>
+    projectsData.find((p) => p.id === id)
+  );
+
   const creativeWorks = projectsData.slice(0, 5).map((project) => ({
     "@type": "SoftwareSourceCode",
     name: project.title,
@@ -113,20 +82,45 @@ const page = () => {
           },
         ]}
       />
-      <HeroSection />
+      <Hero />
       <TechMarquee />
-      <AboutMe />
-      <Divider />
+      <AboutSection />
       <Expertise />
-      <Divider />
-      <Certification />
-      <Divider />
-      <Skills />
+      <Certifications />
       <Services />
-      <Divider />
+      <Process />
       <Achievements />
-      <Projects />
-      <ContactUs />
+
+      <section className="wrap pt-32">
+        <SectionHeading
+          label="07 · Projects"
+          title="Selected work"
+          aside={
+            <Link href="/projects" className="btn-light h-12">
+              All {projectsData.length} projects{" "}
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          }
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {homeProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <Testimonials />
+      <Faq />
+
+      <section className="wrap pt-32">
+        <p className="lbl">10 · Contact</p>
+        <h2 className="h2">Let&apos;s work together</h2>
+        <div className="mt-10 flex flex-wrap gap-4">
+          <ContactInfo />
+          <ContactForm />
+        </div>
+      </section>
+
       <Footer />
     </>
   );

@@ -1,88 +1,68 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { contact } from "@/data/site";
+
+const explore = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/skills", label: "Skills" },
+  { href: "/contact", label: "Contact" },
+];
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Junaid Faiz" },
-    { href: "/projects", label: "View projects" },
-    { href: "/contact", label: "Contact" },
-  ];
-
   return (
-    <footer className="section-shell mt-10 pb-8">
-      <div className="rounded-2xl border border-slate-200/60 bg-white/80 px-6 py-8 shadow-sm sm:px-10">
-        <div className="flex flex-col gap-8 sm:flex-row sm:justify-between">
-          <div>
-            <Link href="/" className="group flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 text-xs font-bold text-white">
-                JF
-              </div>
-              <span className="text-sm font-bold text-slate-700">
-                Junaid Faiz
-              </span>
-            </Link>
-            <p className="mt-2 max-w-xs text-xs leading-relaxed text-slate-400">
-              Full Stack Developer & AI Engineer building modern web applications
-              and intelligent features with React, Next.js, NestJS, and LangChain.
-            </p>
-          </div>
-
-          <nav aria-label="Footer">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-              Explore
-            </p>
-            <ul className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-xs font-medium text-slate-500 transition-colors hover:text-violet-600"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div>
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-              Social
-            </p>
-            <div className="flex items-center gap-4 sm:justify-end">
-              <a
-                href="https://github.com/Junaidfaiz1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs font-medium text-slate-400 transition-colors hover:text-violet-600"
-                aria-label="Junaid Faiz on GitHub"
-              >
-                GitHub <ArrowUpRight size={11} />
-              </a>
-              <a
-                href="https://linkedin.com/in/junaid-faiz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 text-xs font-medium text-slate-400 transition-colors hover:text-violet-600"
-                aria-label="Junaid Faiz on LinkedIn"
-              >
-                LinkedIn <ArrowUpRight size={11} />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 border-t border-slate-100 pt-5 text-center">
-          <p className="text-xs text-slate-400">
-            &copy; {currentYear} Junaid Faiz. All rights reserved.
+    <footer className="wrap pb-8 pt-28">
+      <div className="flex flex-wrap justify-between gap-8 border-t border-stone-200 pt-8">
+        <div className="max-w-[340px]">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 text-[17px] font-extrabold"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-ink text-[13px] text-white">
+              JF
+            </span>
+            Junaid Faiz
+          </Link>
+          <p className="mt-3 text-sm leading-relaxed text-zinc-500">
+            Full Stack Developer &amp; AI Engineer building modern web
+            applications and intelligent features.
           </p>
         </div>
+        <div className="flex flex-wrap gap-16 text-[15px]">
+          <nav aria-label="Footer" className="flex flex-col gap-2.5">
+            <span className="lbl">Explore</span>
+            {explore.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-zinc-500">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex flex-col gap-2.5">
+            <span className="lbl">Social</span>
+            <a
+              href={contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-zinc-500"
+            >
+              GitHub <ExternalLink size={14} aria-hidden="true" />
+            </a>
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-zinc-500"
+            >
+              LinkedIn <ExternalLink size={14} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
       </div>
+      <p className="mt-8 text-sm text-zinc-500">
+        &copy; {new Date().getFullYear()} Junaid Faiz. All rights reserved.
+      </p>
     </footer>
   );
 };

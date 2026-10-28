@@ -93,7 +93,7 @@ const About = () => {
           <div className="rounded-[32px] border border-stone-200 bg-zinc-100 p-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[22px]">
               <Image
-                src="/junaidfaiz.jpg"
+                src="/junaid-faiz.png"
                 alt="Portrait of Junaid Faiz"
                 fill
                 priority

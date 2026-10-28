@@ -56,6 +56,9 @@ export const metadata = {
   },
   alternates: {
     canonical: "/",
+    types: {
+      "text/plain": [{ url: "/llms.txt", title: "LLMs.txt" }],
+    },
   },
   openGraph: {
     type: "website",

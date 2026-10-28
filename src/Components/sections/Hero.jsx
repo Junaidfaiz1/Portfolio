@@ -8,7 +8,7 @@ const Hero = () => (
     <section className="wrap pt-20 text-center md:pt-24">
       <span className="inline-flex h-9 items-center gap-2 rounded-full border border-stone-200 bg-white pl-1 pr-3.5 text-sm font-medium">
         <Image
-          src="/junaidfaiz.jpg"
+          src="/junaid-faiz.png"
           alt=""
           width={28}
           height={28}

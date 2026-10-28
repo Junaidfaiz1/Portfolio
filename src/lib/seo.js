@@ -17,7 +17,7 @@ export const PERSON = {
   jobTitle: "Full Stack Developer & AI Engineer",
   email: "junaidfaizpk5@gmail.com",
   telephone: "+923106846035",
-  image: `${SITE_URL}/junaidfaiz.jpg`,
+  image: `${SITE_URL}/junaid-faiz.png`,
   url: SITE_URL,
   sameAs: [
     "https://linkedin.com/in/junaid-faiz/",

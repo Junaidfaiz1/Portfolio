@@ -1,4 +1,5 @@
 import { SITE_URL } from "@/lib/seo";
+import { RESUME_URL } from "@/data/site";
 
 export default function sitemap() {
   const lastModified = new Date();
@@ -33,6 +34,12 @@ export default function sitemap() {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}${RESUME_URL}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
   ];
 }
